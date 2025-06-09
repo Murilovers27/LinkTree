@@ -1,45 +1,105 @@
-body{
-    font-family: Arial, Helvetica, sans-serif;
-    background-image: url(/src/imagens/background.png);
-    background-size: cover;
-    color: #fff;
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.links{
-    background-color: rgba(39, 10, 10, 0.568);
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    width: 300px;
-    max-width: 80%;
-    
-}
-.sub-titulo{
-    margin-bottom: 10px;
-    margin-top: 50px;
-}
-.perfil{
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #611313;
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Freckle+Face&display=swap');
+
+:root {
+    --cor-fundo: #1e1e1e;
+    --cor-box: rgba(40, 15, 15, 0.85);
+    --cor-destaque: #a66c1f;
+    --cor-texto:#a66c1f;
 }
 
-.link{
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Freckle Face', cursive;
+    background-image: url(/src/imagens/background.png); 
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: var(--cor-texto);
+    min-height: 100vh;
+    overflow-y: auto;
+    padding: 40px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+
+
+@keyframes fadeInMystery {
+    from {
+        opacity: 0;
+        transform: scale(0.95) rotate(-1deg);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+.links {
+    background-color: var(--cor-box);
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    width: 320px;
+    max-width: 90%;
+    box-shadow: 0 0 15px var(--cor-destaque);
+    animation: fadeInMystery 1.2s ease-out;
+    backdrop-filter: blur(3px);
+    border: 2px dashed var(--cor-destaque);
+}
+
+.sub-titulo {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-family: 'Creepster', cursive;
+    font-size: 1.8rem;
+    color: var(--cor-destaque);
+}
+
+.perfil {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #a66c1f;
+    margin-bottom: 15px;
+    box-shadow: 0 0 10px #000;
+}
+
+.linkedin, .gmail, .github {
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 5px 10px;
-    border-radius: 5px;
-    margin: 20px 0;
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin: 8px 0;
     text-decoration: none;
-    
-    p{
-        color:#fff
-    }
+    background-color: rgba(255, 255, 255, 0.07);
+    transition: transform 0.2s, background 0.3s;
+    border: 1px solid var(--cor-destaque);
+    cursor: pointer;
+}
+
+.linkedin:hover, .gmail:hover, .github:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: scale(1.02);
+}
+
+.linkedin img, .gmail img, .github img {
+    width: 54px;
+    height: 54px;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.linkedin p, .gmail p, .github p {
+    font-size: 2rem;
+    color: var(--cor-texto);
+    flex: 1;
+    text-align: left;
+    font-family: 'Freckle Face', cursive;
 }
