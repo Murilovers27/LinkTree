@@ -15,7 +15,7 @@
 
 body {
     font-family: 'Freckle Face', cursive;
-    background-image: url(../src/imagens/background.png); 
+    background-image: url('src/imagens/background.png'); 
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
